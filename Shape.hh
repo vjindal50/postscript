@@ -9,6 +9,6 @@ class Shape
  public:
 	void move_to(int x, int y) : x_axis(x), y_axis(y) {}
 	void save_to_file();	
-}
+};
 
 #endif
