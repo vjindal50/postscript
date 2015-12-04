@@ -27,7 +27,7 @@ int main()
 
 	Postscript p("rect.ps");
 	p.setColor(1, 0, 0); // 1 0 0  setrgbcolor
-	p.fillRect(0, 0, 100, 100);  // 0 0 moveto 100 0 lineto 100 100 lineto 0 100 lineto fill
+	p.fillRect(100, 100, 250, 100);  // 0 0 moveto 100 0 lineto 100 100 lineto 0 100 lineto fill
 	p.setColor(1, 0, 0); // 1 0 0  setrgbcolor
 						 //0 200 moveto 200 200 lineto 100 400 lineto fill
 }
