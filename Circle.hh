@@ -15,6 +15,6 @@ class Circle
 	void draw(double r) : radius(r) {}
 	void fill(int c) : color(c) {}
 		
-}
+};
 
 #endif

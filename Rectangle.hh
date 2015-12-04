@@ -13,6 +13,6 @@ class Rectangle
 	void draw(int h, int w) : height(h), width(w) {}
 	void fill(int c) : color(c) {}
 	void create_border(int thickness);	
-}
+};
 
 #endif

@@ -18,6 +18,6 @@ class Text
 	void write(int h, double w, int c, int t, char c[100]) : font_height(h), font_width(w), font_color(c), font_type(t) {}
 	void rotate(double a) : angle(a) {}
 	void translate(int tx, int ty) : trans_x(tx), trans_y(ty) {}	
-}
+};
 
 #endif
