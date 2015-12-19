@@ -1,23 +1,58 @@
 #ifndef TEXT_HH_
 #define TEXT_HH_
 
+#include <string>
+#include <string.h>
 #include "Shape.hh"
 
-class Text
+class Text : public Shape
 {
  private:
-	int font_height;
-	double font_width;
-	int font_color;
-	int font_type;
+	int font_size;
 	double angle;
-	int trans_x;
-	int trans_y;
+	int scale_x;
+	int scale_y;
 	
  public:
-	void write(int h, double w, int c, int t, char c[100]) : font_height(h), font_width(w), font_color(c), font_type(t) {}
-	void rotate(double a) : angle(a) {}
-	void translate(int tx, int ty) : trans_x(tx), trans_y(ty) {}	
+	void text_write(int x, int y, int s, float ra, char c[100]) 
+	{
+		font_size=s;
+		char str[100];
+		strcpy(str,c);
+
+		file_open();
+		file << "/Times-Roman findfont \n";
+		file << s << " scalefont \n";
+		file << "setfont \n";
+		file << ra << " rotate \n";
+		file << "2 1 scale \n";
+		file_close();
+
+		move_to(x,y);
+
+		file_open();
+		file << "( " ;
+		for(int i=0;str[i]!='\0';i++)
+		{
+			file << str[i];
+		} 
+		
+		file << " ) true charpath \n";
+		file << "gsave \n";
+		file << "stroke \n";
+		file << "grestore \n";
+		file_close(); 
+ 
+	}
+	
+	void text_fill(int x, int y, int s, float ra, char c[100])
+	{	
+		text_write(x,y,s,ra,c);
+		file_open();
+		file << " fill \n";
+		file_close();
+	}
+	
 };
 
 #endif
