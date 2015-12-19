@@ -1,19 +1,24 @@
 #ifndef CIRCLE_HH_
 #define CIRCLE_HH_
 
-#include "Shape.hh"
+#include "Arc.hh"
 
-class Circle
+class Circle : public Arc 
 {
  private:
-	double radius;
-	double start_angle;
-	double end_angle;
-	int color;
+	float radius;
+	
  public:
-	void arc(double sa, double ea, double r) : start_angle(sa), end_angle(ea), radius(r) {}
-	void draw(double r) : radius(r) {}
-	void fill(int c) : color(c) {}
+	void circle_draw(float r) 
+	{
+		radius=r; 
+		arc_draw(0.0,360.0,radius);
+	}
+	void circle_fill(float r) 
+	{
+		radius=r;
+		fill_segment(0.0,360.0,radius);
+	}
 		
 };
 
