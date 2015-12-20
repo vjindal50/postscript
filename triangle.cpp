@@ -30,6 +30,6 @@ int main()
 {
 
     Postscript p("triangle.ps");
- p.fillTriangle(0,200,  200,200, 100, 400);
+    p.fillTriangle(0,200,  200,200, 100, 400);
     p.setColor(1,0,0); // 1 0 0  setrgbcolor
 }
