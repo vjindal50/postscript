@@ -1,0 +1,24 @@
+
+#include "Shape.hh"
+
+class Polyline : public Shape
+{
+ private:
+	int next_x;
+	int next_y;
+	
+ public:
+	
+	void lineto(int nx, int ny) : next_x(nx), next_y(ny) 
+	{
+		file_open();
+		file << next_x << ' ' << next_y << " lineto \n";
+		file_close();
+	}	
+}a;
+
+int main()
+{
+	a.lineto(5,4);	
+}
+
